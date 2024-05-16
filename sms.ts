@@ -22,6 +22,7 @@ await textanimation(
 );
 
 let studentdata: any[] = [];
+let studentID: number = 1
 
 let selectoption = await inquirer.prompt([
   {
