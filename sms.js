@@ -1,16 +1,29 @@
 import inquirer from "inquirer";
-let new_students = [];
-let add_students = await inquirer.prompt([{
-        name: "addstudent",
-        message: "What is the name of student?",
-        type: "input",
-    },
-    {
-        name: "course",
-        message: "Please select the course for enrolment",
-        type: "list",
-        choices: ["English Language", "Computer Programming", "Artificail Intelligence", "Machine Learning", "Data Science"]
+import chalk from "chalk";
+async function textanimation(text) {
+    for (let char of text) {
+        process.stdout.write(char);
+        await new Promise((resolve) => setTimeout(resolve, 50));
     }
-]);
-new_students.push(add_students.addstudent);
-new_students.forEach((new_students) => console.log(`${new_students} is enrolled in ${add_students.course} course and his ID is generateuniqueid`));
+}
+async function exitanimation(text) {
+    for (let char of text) {
+        process.stdout.write(char);
+        await new Promise((resolve) => setTimeout(resolve, 10));
+    }
+}
+textanimation(chalk.bold.red.bgBlue("\t\t\t Welcome in Student Managemet System\n"));
+let selectoption = await inquirer.prompt([{
+        name: "addstudent",
+        message: "Please select any one option",
+        type: "list",
+        choices: [
+            "Add New Student",
+            "View Students",
+            "Delete Student",
+            "View Courses and Fee",
+            "Pay Fee",
+            "View Balance",
+            "Enroll Student",
+        ]
+    }]);
