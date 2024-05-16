@@ -13,6 +13,7 @@ async function exitanimation(text) {
     }
 }
 await textanimation(chalk.bold.red.bgBlue("\t\t\t Welcome in Student Managemet System\n"));
+let studentdata = [];
 let selectoption = await inquirer.prompt([
     {
         name: "smsform",
@@ -29,7 +30,6 @@ let selectoption = await inquirer.prompt([
         ],
     },
 ]);
-let studentdata = [];
 let condition = true;
 if (selectoption.smsform === "Add New Student")
     while (condition) {
@@ -119,7 +119,8 @@ if (selectoption.smsform === "Add New Student")
                 },
             ]);
             condition = addnewstudent.askquestion;
+            studentdata.push(addnewstudent);
+            console.log("Student Data:");
+            console.table(studentdata);
         }
     }
-studentdata.push(selectoption.addnewstudent);
-console.log(studentdata);

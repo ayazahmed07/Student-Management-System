@@ -1,8 +1,6 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 
-let studentdata: any[] = [];
-
 async function textanimation(text: string) {
   for (let char of text) {
     process.stdout.write(char);
@@ -23,6 +21,8 @@ await textanimation(
   chalk.bold.red.bgBlue("\t\t\t Welcome in Student Managemet System\n")
 );
 
+let studentdata: any[] = [];
+
 let selectoption = await inquirer.prompt([
   {
     name: "smsform",
@@ -39,7 +39,6 @@ let selectoption = await inquirer.prompt([
     ],
   },
 ]);
-
 
 let condition = true;
 
@@ -146,10 +145,12 @@ if (selectoption.smsform === "Add New Student")
         },
       ]);
       condition = addnewstudent.askquestion;
+
+      studentdata.push(addnewstudent);
+
+      console.log("Student Data:");
+      console.table(studentdata);
+
+
     }
   }
-
-  studentdata.push(addnewstudent);
-
- 
-
