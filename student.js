@@ -14,6 +14,7 @@ async function exitanimation(text) {
 }
 await textanimation(chalk.bold.red.bgBlue("\t\t\t Welcome in Student Managemet System\n"));
 let studentdata = [];
+let studentID = 1;
 let selectoption = await inquirer.prompt([
     {
         name: "smsform",

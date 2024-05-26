@@ -10,7 +10,7 @@
   "author": "Ayaz ahmed",
   "license": "MIT",
   "dependencies": {
-    "inquirer": "^9.2.19",
+    "inquirer": "^9.2.22",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
